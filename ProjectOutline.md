@@ -27,13 +27,15 @@ Textbook Sharing
     - ISBN
     - College
     - Price
-    - Email _for authentication_
+    - Email _for authentication - using partial email confirmation_
     - Facebook/Messenger Link
 
 ## Pages
   - Welcome Page (welcome#index) _Claremont College authentication_
   - Textbooks (textbook#index)
   - Textbook New (textbook#new)
+
+  **Welcome Page -> Textbooks <-> Textbook New**
 
 ### Hosting requirements:
    - Set up our own server
