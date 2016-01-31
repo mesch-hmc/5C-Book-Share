@@ -42,6 +42,17 @@ class TextbooksController < ApplicationController
     end
   end
 
+  def destroy
+    @textbook = Textbook.find(params[:id])
+
+    if @textbook.email == params[:textbook][:email_confirmation]
+      @textbook.destroy
+      redirect_to textbooks_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private
     def textbook_params
       params.require(:textbook).permit(:title, :author, :isbn, :college, :email, :fblink, :price, :sold)

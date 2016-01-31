@@ -11,7 +11,10 @@
     </div>
   <% end %>
 
+  <hr>
+
   <h3>Textbook information</h3>
+  <hr>
   <div class="form-group">
     <%= f.label :title %> <br>
     <%= f.text_field :title, class: "form-control" %>
@@ -32,7 +35,9 @@
     <%= f.number_field :price, in: 0.00..5000.00, step: 0.01, class: "form-control" %>
   </div>
 
+  <hr>
   <h3>Seller Information</h3>
+  <hr>
   <div class="form-group">
     <%= f.label :college %> <br>
     <%= f.text_field :college, class: "form-control" %>
