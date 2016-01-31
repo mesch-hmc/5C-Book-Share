@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20160130190540) do
     t.string   "college"
     t.string   "email"
     t.string   "fblink"
-    t.decimal  "price"
+    t.decimal  "price",      precision: 6, scale: 2
     t.boolean  "sold"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
 end

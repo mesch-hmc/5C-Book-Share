@@ -7,15 +7,20 @@ class TextbooksController < ApplicationController
 
   def new
     check_access
+    @textbook = Textbook.new
   end
 
   def create
     @textbook = Textbook.new(textbook_params)
 
-    if @textbook.save
-      redirect_to textbooks_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @textbook.save
+        format.html { redirect_to textbooks_path, notice: 'Texbook entry was successfully created.' }
+        format.json { render :show, status: :created, location: @textbook }
+      else
+        format.html { render :new }
+        format.json { render json: @textbook.errors, status: :unprocessable_entity }
+      end
     end
   end
 

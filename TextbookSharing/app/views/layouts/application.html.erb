@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <div class="jumbotron" id="header_title">
+      Welcome to the Nav - the 5C Textbook Exchange
+      <br>
+      <div class="new_entry">
+        <% if current_page?(textbooks_path) %>
+          <%= link_to "Submit a new Textbook Entry", new_textbook_path %>
+        <% end %>
+      </div>
+    </div>
+  </header>
 
-<%= yield %>
+  <div class="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
