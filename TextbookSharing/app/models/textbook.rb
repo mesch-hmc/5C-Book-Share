@@ -1,4 +1,7 @@
 class Textbook < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
   validates :title, presence: true
   validates :author, presence: true
   validates :isbn, presence: true, length: { minimum: 10 }, format: {with: /\A(\d+(-)*)+\Z/}

@@ -1,8 +1,10 @@
-<h2>Welcome to the 5C Textbook Exchange </h2>
-<%= form_for :textbook, url: {action: "welcome"} do |f| %>
-  <div class="form-group welcome">
-    <h3>Enter your email address</h3>
-    <%= f.email_field :email, autocomplete: :off %> <br><br>
-    <%= f.submit 'Check email', class: "btn btn-lg btn-primary" %>
-  </div>
-<% end %>
+<div class="welcome">
+  <h2>Welcome to the 5C Textbook Exchange </h2>
+  <%= form_for :textbook, url: {action: "welcome"} do |f| %>
+    <div class="form-group">
+      <h3>Enter your email address</h3>
+      <%= f.email_field :email, autocomplete: :off %> <br><br>
+      <%= f.submit 'Check email', class: "btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+</div>

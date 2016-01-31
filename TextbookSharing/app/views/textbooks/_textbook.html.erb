@@ -1,0 +1,25 @@
+<%= div_for textbook, class: "textbook_wrapper" do %> <!-- consider using well -->
+  <h2 class="title"><%= textbook.title %></h2>
+  <h4 class="author"><%= textbook.author %></h4>
+  <p class="isbn"><%= textbook.isbn %></p>
+  <p class="price">$<%= sprintf "%.2f", textbook.price %></p> <br>
+  <p class="college"><%= textbook.college %></p>
+  // <p class="email"><%= textbook.email %></p>
+  <p class="fblink"><%= textbook.fblink %></p> //
+
+  <div class="show_hide">
+    <%= label_tag "Sold? " %>
+    <%= check_box_tag "Sold", 1, false, id: 'sold' %>
+    <div>
+      <br>
+      <p>By making this post as sold it will be deleted.</p>
+      <%= form_for :textbook, url: textbook_path(textbook), html: {method: :delete} do |f| %>
+        <div class="form-group">
+          <p>Complete your email [<%= textbook.email[0,2] + '*'*5 + textbook.email[-5,5]%>]: </p>
+          <%= email_field :email_confirmation, autocomplete: :off, class: "form-control" %> <br>
+          <%= f.submit "Sold - Delete", class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure? Entry will be delete.' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
