@@ -29,11 +29,12 @@ Textbook Sharing
     - Price
     - Email _for authentication - using partial email confirmation_
     - Facebook/Messenger Link
+    - Sold _indicating whether the book is still available if not remove it_
 
 ## Pages
-  - Welcome Page (welcome#index) _Claremont College authentication_
-  - Textbooks (textbook#index)
-  - Textbook New (textbook#new)
+  - Welcome Page (textbooks#welcome) _Claremont College authentication_
+  - Textbooks (textbooks#index)
+  - Textbook New (textboosk#new)
 
   **Welcome Page -> Textbooks <-> Textbook New**
 

@@ -1,0 +1,10 @@
+
+
+
+<%= form_for :textbook, url: {action: "welcome"} do |f| %>
+  <div class="form-group welcome">
+    <h3>Enter your email address</h3>
+    <%= f.email_field :email %> <br><br>
+    <%= f.submit 'Check email', class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
