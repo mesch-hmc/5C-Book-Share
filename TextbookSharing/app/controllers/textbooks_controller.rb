@@ -2,8 +2,11 @@ class TextbooksController < ApplicationController
 
   def index
     check_access
-    #@textbooks = Textbook.search((params[:q].present? ? params[:q] : '*')).records
-    @textbooks = Textbook.all.order('created_at DESC')
+    if params[:q]
+      @textbooks = Textbook.search((params[:q].present? ? params[:q] : '*')).records
+    else
+      @textbooks = Textbook.all.order('created_at DESC')
+    end
   end
 
   def new
