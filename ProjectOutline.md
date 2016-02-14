@@ -25,18 +25,22 @@ Textbook Sharing
     - Title
     - Author
     - ISBN
-    - College
     - Price
-    - Email _for authentication - using partial email confirmation_
-    - Facebook/Messenger Link
     - Sold _indicating whether the book is still available if not remove it_
 
+  **User**
+    - College
+    - Email _for authentication - using partial email confirmation_
+    - Facebook/Messenger Link
+
 ## Pages
-  - Welcome Page (textbooks#welcome) _Claremont College authentication_
+  - Welcome Page (textbooks#welcome)
   - Textbooks (textbooks#index)
   - Textbook New (textboosk#new)
+  - Login (user#new_user_session)
+  - Signup (user#new_user_registration)
 
-  **Welcome Page -> Textbooks <-> Textbook New**
+  **Welcome Page -> [Sign Up / Sign In] -> Textbooks <-> Textbook New**
 
 ### Hosting requirements:
    - Set up our own server

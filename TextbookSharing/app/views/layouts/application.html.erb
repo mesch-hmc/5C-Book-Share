@@ -9,11 +9,30 @@
 <body>
   <header>
     <div class="jumbotron" id="header_title">
-      <h1>The 5C Textbook Exchange</h1>
+      <h1>
+        <%= link_to "The 5C Textbook Exchange", textbooks_path %>
+      </h1>
       <br>
       <div class="new_entry">
-        <% if current_page?(textbooks_path) %>
-          <%= link_to "Submit a new Textbook Entry", new_textbook_path %>
+        <% if user_signed_in? %>
+          <% if current_page?(textbooks_path) %>
+            <div class="button btn btn-default" id="new">
+              <%= link_to "Submit a new Textbook Entry", new_textbook_path %>
+            </div>
+          <% end %> |
+          <div class="button btn btn-default">
+            <%= link_to "Account", edit_user_registration_path %>
+          </div> |
+          <div class="button btn btn-default">
+            <%= link_to "Sign Out", destroy_user_session_path %>
+          </div>
+        <% else %>
+          <div class="button btn btn-default">
+            <%= link_to "Sign In", new_user_session_path %>
+          </div> |
+          <div class="button btn btn-default">
+            <%= link_to "Sign Up", new_user_registration_path %>
+          </div>
         <% end %>
       </div>
     </div>
