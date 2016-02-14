@@ -6,5 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :textbooks
 
+  # # Data validation
+  validates :name, presence: true
+  validates :college, presence: true
+  validates :fblink, presence: true
+
   COLLEGES = ['HMC', 'Scripps', 'Pitzer', 'CMC', 'CGU', 'KGI', 'Pomona']
 end

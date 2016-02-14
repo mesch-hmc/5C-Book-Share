@@ -7,8 +7,15 @@
   <br>
 
     <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+  <br>
+
+    <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email %>
     </div>
 
   <br>
@@ -31,20 +38,16 @@
   <br>
 
     <div class="field">
-      <div class="dropdown form-group">
-        <%= f.label :college %><br />
-        <%= f.collection_select :college, User::COLLEGES, :to_s, :to_s,
-         :include_blank => true, class: "btn btn-default dropdown-toggle" %>
-       </div>
+      <%= f.label :college %><br />
+      <%= f.collection_select :college, User::COLLEGES, :to_s, :to_s,
+       :include_blank => true, class: "btn btn-default dropdown-toggle" %>
     </div>
 
   <br>
 
     <div class="field">
-      <div class="form-group">
-        <%= f.label "Link to Facebook" %> <br>
-        <%= f.url_field :fblink, class: "form-control" %>
-      </div>
+      <%= f.label "Link to Facebook" %> <br>
+      <%= f.url_field :fblink, class: "form-control" %>
     </div>
 
   <br>

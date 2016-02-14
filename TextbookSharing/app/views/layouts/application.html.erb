@@ -16,23 +16,16 @@
       <div class="new_entry">
         <% if user_signed_in? %>
           <% if current_page?(textbooks_path) %>
-            <div class="button btn btn-default" id="new">
-              <%= link_to "Submit a new Textbook Entry", new_textbook_path %>
-            </div>
-          <% end %> |
-          <div class="button btn btn-default">
-            <%= link_to "Account", edit_user_registration_path %>
-          </div> |
-          <div class="button btn btn-default">
-            <%= link_to "Sign Out", destroy_user_session_path %>
-          </div>
+            <%= link_to "Submit a new Textbook Entry", new_textbook_path, class: "button btn btn-default" %>
+            |
+          <% end %>
+          <%= link_to "Account", edit_user_registration_path, class: "button btn btn-default" %>
+            |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button btn btn-default" %>
         <% else %>
-          <div class="button btn btn-default">
-            <%= link_to "Sign In", new_user_session_path %>
-          </div> |
-          <div class="button btn btn-default">
-            <%= link_to "Sign Up", new_user_registration_path %>
-          </div>
+          <%= link_to "Sign In", new_user_session_path, class: "button btn btn-default" %>
+           |
+          <%= link_to "Sign Up", new_user_registration_path, class: "button btn btn-default" %>
         <% end %>
       </div>
     </div>

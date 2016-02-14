@@ -20,6 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 
       ## Textbook Specific
+      t.string   :name,    null: false, default: ""
       t.string   :college, null: false, default: ""
       t.string   :fblink,  null: false, default: ""
 

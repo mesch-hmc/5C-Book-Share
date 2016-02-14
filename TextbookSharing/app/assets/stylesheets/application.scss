@@ -34,8 +34,15 @@
    padding: .5em;
    margin-right: 2em;
    font-size: 14px;
+   color: #d6dce0;
+   #new {
+     float: left;
+   }
    p {
-     font-size: 14px
+     font-size: 14px;
+   }
+   a {
+     color: #0e97db;
    }
  }
 }
@@ -49,6 +56,9 @@
  align-content: center;
  text-align: center;
  font-size: 18px;
+ .button {
+   color: #0e97db;
+ }
 }
 
 
@@ -75,9 +85,6 @@
 
 .button {
   padding: -.5em 0;
-  #new {
-    float: left;
-  }
   a {
     text-decoration: none;
   }

@@ -29,6 +29,7 @@ Textbook Sharing
     - Sold _indicating whether the book is still available if not remove it_
 
   **User**
+    - Name
     - College
     - Email _for authentication - using partial email confirmation_
     - Facebook/Messenger Link
