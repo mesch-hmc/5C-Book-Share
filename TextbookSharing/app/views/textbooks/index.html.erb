@@ -1,11 +1,12 @@
-<% @textbooks.each do |textbook| %>
-  <div class="textbook_wrapper">
-    <h2 class="title"><%= textbook.title %></h2>
-    <h4 class="author"><%= textbook.author %></h4>
-    <p class="isbn"><%= textbook.isbn %></p>
-    <p class="price">$<%= sprintf "%.2f", textbook.price %></p>
-    <p class="college"><%= textbook.college %></p>
-    <p class="email"><%= textbook.email %></p>
-    <p class="fblink"><%= textbook.fblink %></p>
+<nav class="navbar navbar-default">
+  <div class="container fci">
+    <%= form_tag textbooks_path, class: "navbar-form navbar-center glyphicon glyphicon-search", role: 'search', method: :get do |f| %>
+      <div class="form-group">
+        <%= text_field_tag :q, params[:q], class: "form-control"%>
+      </div>
+      <%= button_tag "Search", class: "btn btn-default", name: nil %>
+    <% end %>
   </div>
-<% end %>
+</nav>
+
+<%= render @textbooks %>

@@ -9,17 +9,33 @@
 <body>
   <header>
     <div class="jumbotron" id="header_title">
-      Welcome to the Nav - the 5C Textbook Exchange
+      <h1>
+        <%= link_to "The 5C Textbook Exchange", textbooks_path %>
+      </h1>
       <br>
       <div class="new_entry">
-        <% if current_page?(textbooks_path) %>
-          <%= link_to "Submit a new Textbook Entry", new_textbook_path %>
+        <% if user_signed_in? %>
+          <% if current_page?(textbooks_path) %>
+            <%= link_to "Submit a new Textbook Entry", new_textbook_path, class: "button btn btn-default" %>
+            |
+          <% end %>
+          <%= link_to "Account", edit_user_registration_path, class: "button btn btn-default" %>
+            |
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button btn btn-default" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, class: "button btn btn-default" %>
+           |
+          <%= link_to "Sign Up", new_user_registration_path, class: "button btn btn-default" %>
         <% end %>
       </div>
     </div>
   </header>
 
-  <div class="content">
+  <div class="content container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %>
+
     <%= yield %>
   </div>
 

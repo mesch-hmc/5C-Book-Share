@@ -1,17 +1,24 @@
 class TextbooksController < ApplicationController
+  before_action :authenticate_user!, except: [:welcome]
+  before_action :set_textbook, only: [:destroy, :update, :edit]
+
+  def welcome
+  end
 
   def index
-    check_access
-    @textbooks = Textbook.all.order('created_at DESC')
+    if params[:q]
+      @textbooks = Textbook.search((params[:q].present? ? params[:q] : '*')).records
+    else
+      @textbooks = Textbook.all.order('created_at DESC')
+    end
   end
 
   def new
-    check_access
-    @textbook = Textbook.new
+    @textbook = current_user.textbooks.build
   end
 
   def create
-    @textbook = Textbook.new(textbook_params)
+    @textbook = current_user.textbooks.build(textbook_params)
 
     respond_to do |format|
       if @textbook.save
@@ -24,36 +31,35 @@ class TextbooksController < ApplicationController
     end
   end
 
-  def welcome
-    session[:access] = false
+  def edit
   end
 
-  def welcome_check
-    @email = params[:textbook][:email]
-    @check =  (@email.end_with? "@g.hmc.edu") ||  (@email.end_with? "@hmc.edu") ||
-    (@email.end_with? "@pomona.edu") || (@email.end_with? "@scrippscollege.edu") ||
-    (@email.end_with? "@claremontmckenna.edu") || (@email.end_with? "@pitzer.edu")
+  def update
+    respond_to do |format|
+      if @textbook.update[textbook_params]
+        format.html { redirect_to textbooks_path, notice: 'Texbook entry was successfully updated.' }
+        format.json { render :show, status: :ok, location: @textbook }
+      else
+        format.html { render :edit }
+        format.json { render json: @textbook.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-    if @check
-      can_access
-      redirect_to textbooks_path
-    else
-      redirect_to root_path
+  def destroy
+    @textbook.destroy
+    respond_to do |format|
+      format.html { redirect_to textbooks_path, notice: "Textbook entry was successfully destroy." }
+      format.json { head :no_content }
     end
   end
 
   private
+    def set_textbook
+      @textbook = Textbook.find(params[:id])
+    end
+
     def textbook_params
-      params.require(:textbook).permit(:title, :author, :isbn, :college, :email, :fblink, :price, :sold)
-    end
-
-    def check_access
-      if !session[:access]
-        redirect_to root_path
-      end
-    end
-
-    def can_access
-      session[:access] = true
+      params.require(:textbook).permit(:title, :author, :isbn, :price)
     end
 end

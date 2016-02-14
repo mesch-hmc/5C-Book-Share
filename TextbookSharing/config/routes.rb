@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :textbooks
   root "textbooks#welcome"
-  post '/', to: 'textbooks#welcome_check'
 end
