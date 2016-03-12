@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   validates :fblink, presence: true
   validates :fblink, format: { with: /https:\/\/www.facebook.com(.*)/, message: "invalid facebook link" }
 
-  COLLEGES = ['HMC', 'Scripps', 'Pitzer', 'CMC', 'CGU', 'KGI', 'Pomona']
+  COLLEGES = ['CGU', 'CMC', 'HMC', 'KGI', 'POM', 'PTZ', 'SCR']
 end
