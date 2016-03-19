@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20160319035202) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name",                   default: "", null: false
-    t.string   "college",                default: "", null: false
     t.string   "fblink",                 default: "", null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

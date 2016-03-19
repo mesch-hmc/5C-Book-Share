@@ -7,14 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :textbooks
 
-  # # Data validation
-  #validates :name, presence: true
-  #validates :college, presence: true
-  #validates :fblink, presence: true
-  #validates :fblink, format: { with: /https:\/\/www.facebook.com(.*)/, message: "invalid facebook link" }
-
-  COLLEGES = ['CGU', 'CMC', 'HMC', 'KGI', 'POM', 'PTZ', 'SCR']
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email

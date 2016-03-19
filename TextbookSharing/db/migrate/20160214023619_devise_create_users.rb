@@ -21,7 +21,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       ## Textbook Specific
       t.string   :name,    null: false, default: ""
-      t.string   :college, null: false, default: ""
       t.string   :fblink,  null: false, default: ""
 
       ## Confirmable

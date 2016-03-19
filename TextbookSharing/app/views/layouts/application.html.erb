@@ -19,15 +19,9 @@
             <%= link_to "Submit a new Textbook Entry", new_textbook_path, class: "button btn btn-default" %>
             |
           <% end %>
-          <%= link_to "Account", edit_user_registration_path, class: "button btn btn-default" %>
-            |
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "button btn btn-default" %>
         <% else %>
-          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "button btn btn-default" %>
-           |
-          <%= link_to "Sign In", new_user_session_path, class: "button btn btn-default" %>
-           |
-          <%= link_to "Sign Up", new_user_registration_path, class: "button btn btn-default" %>
+          <%= link_to "Sign In", user_omniauth_authorize_path(:facebook), class: "button btn btn-default" %>
         <% end %>
       </div>
     </div>

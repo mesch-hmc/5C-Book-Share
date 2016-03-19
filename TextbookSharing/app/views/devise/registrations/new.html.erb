@@ -38,14 +38,6 @@
   <br>
 
     <div class="field">
-      <%= f.label :college %><br />
-      <%= f.collection_select :college, User::COLLEGES, :to_s, :to_s,
-       :include_blank => true, class: "btn btn-default dropdown-toggle" %>
-    </div>
-
-  <br>
-
-    <div class="field">
       <%= f.label "Link to Facebook" %> <br>
       <%= f.url_field :fblink, class: "form-control" %>
     </div>

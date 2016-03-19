@@ -4,7 +4,6 @@ one:
   title: MyString
   author: MyString
   ISBN: 1
-  college: MyString
   price: 9.99
   email: MyString
   fblink: MyString
@@ -13,7 +12,6 @@ two:
   title: MyString
   author: MyString
   ISBN: 1
-  college: MyString
   price: 9.99
   email: MyString
   fblink: MyString
