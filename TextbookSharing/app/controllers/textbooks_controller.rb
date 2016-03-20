@@ -54,6 +54,10 @@ class TextbooksController < ApplicationController
     end
   end
 
+  def show
+    @textbook = Textbook.find(params[:id])
+  end
+
   private
     def set_textbook
       @textbook = Textbook.find(params[:id])

@@ -1,3 +1,32 @@
-// Place all the styles related to the textbooks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+table {
+  width:100%;
+  margin: 15px auto auto;
+  text-align:center;
+  th {
+    text-align:center;
+    text-decoration:underline;
+  }
+  .clickable-row {
+    height:40px;
+    &:nth-child(even) {
+      background: #ffffff;
+    }
+    &:nth-child(odd) {
+      background: #f9f9f9;
+    }
+    &:hover {
+      background: #f5f5f5;
+    }
+    td {
+      width:250px;
+      line-height:40px;
+      a {
+        display: inline-block;
+        height:40px;
+        width:100%;
+        color:black;
+        text-decoration: none;
+      }
+    }
+  }
+}
