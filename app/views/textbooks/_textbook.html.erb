@@ -2,8 +2,8 @@
   <h2 class="title"><%= textbook.title %></h2>
   <h4 class="author"><%= textbook.author %></h4>
   <p class="isbn"><%= textbook.isbn %></p> <br>
-  <p class="price">$<%= sprintf "%.2f", textbook.price %></p> <br>
-  <p class="email"><%= mail_to textbook.user.email, "Email " + textbook.user.name %></p> //
+  <p class="price">$<%= sprintf "%.2f", textbook.price %></p> <br> <br>
+  <p>Seller Info</p> <br>
   <p class="fblink"><%= link_to textbook.user.name + "'s Facebook", textbook.user.fblink %></p>
   <div class="facebook">
     <div class="fb-comments" data-href="<%= request.url %>" data-width="500"
