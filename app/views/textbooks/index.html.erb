@@ -20,9 +20,9 @@
 
   <% @textbooks.each do |textbook| %>
     <tr class="clickable-row">
-      <td><a href="/textbooks/<%= textbook.id %>"><%= textbook.title %></a></td>
-      <td><a href="/textbooks/<%= textbook.id %>"><%= textbook.author %></a></td>
-      <td><a href="/textbooks/<%= textbook.id %>">$<%= sprintf '%.2f', textbook.price %></a></td>
+      <td><a data-no-turbolink="true" href="/textbooks/<%= textbook.id %>"><%= textbook.title %></a></td>
+      <td><a data-no-turbolink="true" href="/textbooks/<%= textbook.id %>"><%= textbook.author %></a></td>
+      <td><a data-no-turbolink="true" href="/textbooks/<%= textbook.id %>">$<%= sprintf '%.2f', textbook.price %></a></td>
     </tr>
   <% end %>
 </table>
