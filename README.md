@@ -1,3 +1,3 @@
-# TextbookSharing
+# 5C Book Share 
 
-We are creating a textbook website that streamlines data from the Facebook Claremont College pages to make it easier to find, buy, and sell textbooks within the 7 Claremont Colleges. Eventually, the site will be a stand-alone product that will enable users to easily find information about everything they need about textbooks for classes.
+A textbook website that takes posts from the Facebook Claremont College pages to make it easier to find, buy, and sell textbooks in the Claremont Colleges. 
