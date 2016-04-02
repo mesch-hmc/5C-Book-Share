@@ -4,7 +4,7 @@ default: &default
   pool: 5
   host: localhost
   username: 5cbookshare
-  password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+  password: <%= ENV['5CBOOKSHARE_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
